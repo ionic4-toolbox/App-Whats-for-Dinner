@@ -14,3 +14,21 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+$purple: #251927;
+$pink: #e76676;
+$white: #f4f6f6;
+$grey: #e6e6e6;
+$darkgrey: #6a6172;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nixie One', cursive;
+}
+
+body, p, a {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#meal {
+    font-family: 'Nixie One', cursive;
+}
