@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Add meals
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-input type="text" name="meal" placeholder="Save a new meal" [(ngModel)]="meal"></ion-input>
+    </ion-item>
+    <button ion-button (click)="saveMeal(meal)">
+        Add meal
+    </button>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <button ion-button (click)="dismiss()">
+            Done
+        </button>
+    </ion-toolbar>
+</ion-footer>

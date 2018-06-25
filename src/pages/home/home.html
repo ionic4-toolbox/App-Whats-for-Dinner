@@ -1,5 +1,17 @@
 <ion-content padding class="background">
 	<h1 class="dinner">What's for dinner?</h1>
 	<button (click)="getMeal()" class="button">Feed me!</button>
-	<p id="meal">{{ myMeals[mealNumber] }}</p>
+	<p class="meal">{{ displayMeal }}</p>
+
+	<ion-fab left bottom>
+		<button ion-fab mini (click)="presentModal()">
+			<ion-icon name="add"></ion-icon>
+		</button>
+	</ion-fab>
+
+	<ion-fab right bottom>
+		<button ion-fab mini (click)="confirmDelete()">
+			<ion-icon name="trash"></ion-icon>
+		</button>
+	</ion-fab>
 </ion-content>

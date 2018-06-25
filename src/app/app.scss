@@ -29,6 +29,26 @@ body, p, a {
     font-family: 'Open Sans', sans-serif;
 }
 
-#meal {
+.meal {
     font-family: 'Nixie One', cursive;
+}
+
+.button {
+    background: $white;
+    border-bottom: 5px solid $grey;
+    border-radius: 8px;
+    padding: 10px 30px;
+    margin: 1em;
+    color: $darkgrey;
+    height: 45px;
+    text-decoration: none;
+    outline: 0;
+    transition: all 0.1s;
+    font-size: 16px;
+    -webkit-transition: all 0.1s;
+    &:active {
+        transform: translate(0px, 5px);
+        -webkit-transform: translate(0px, 5px);
+        border-bottom: 1px solid;
+    }
 }
