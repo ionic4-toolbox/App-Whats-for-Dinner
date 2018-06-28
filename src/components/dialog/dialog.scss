@@ -1,0 +1,35 @@
+.show-page {
+    .background {
+        background-color: $purple;
+        color: $white;
+    }
+    .label-ios[stacked] {
+        font-family: 'Nixie One', cursive;
+        font-size: 2.4rem;
+    }
+    .item-ios {
+        padding: 0;
+        margin: 10px 0;
+        background: $darkgrey;
+        color: $white;
+        .item-inner {
+            padding: 0 15px;
+            border: 0;
+        }
+        .text-input::-webkit-input-placeholder {
+            color: $white;
+            font-size: 14px;
+        }
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    .toolbar-background-ios {
+        background: $purple;
+        border-color: $darkgrey;
+    }
+    .toolbar-title-ios {
+        color: $white;
+    }
+}

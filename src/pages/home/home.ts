@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, ModalController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { DialogComponent } from '../../components/dialog/dialog';
 
@@ -9,55 +9,49 @@ import { DialogComponent } from '../../components/dialog/dialog';
 })
 export class HomePage {
 
-  randomMeal;
-  displayMeal;
+  randomMeal = null;
+  displayMeal = null;
+  lastRandom;
 
   constructor(public navCtrl: NavController,
               public modalCtrl: ModalController,
-              private storage: Storage,
-              private alertCtrl: AlertController) {
+              private storage: Storage) {
+  }
 
+  ngOnInit(){
+    this.storage.get('myMeals').then((meals) => {
+        if (! meals) {
+          this.displayMeal = `You have no meals, you can add them by hitting the plus button.`
+        }
+    });
   }
 
   getMeal() {
     this.storage.get('myMeals').then((meals) => {
-      this.randomMeal = Math.floor(Math.random() * meals.length);
-      this.displayMeal = meals[this.randomMeal];
-      console.log(meals[this.randomMeal]);
-    });
-  }
+      if (! meals) {
+        return;
+      }
 
-  clearMeal() {
-    this.storage.clear();
-  }
-
-  confirmDelete() {
-    let alert = this.alertCtrl.create({
-      title: 'Delete all meals?',
-      message: 'Are you sure you want to delete all saved meals?',
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: () => {
-            console.log('cancel');
+      let newRandomMeal = Math.floor(Math.random() * meals.length);
+          while (this.randomMeal === newRandomMeal) {
+            newRandomMeal = Math.floor(Math.random() * meals.length);
           }
-        },
-        {
-          text: 'Delete',
-          role: 'delete',
-          handler: () => {
-            console.log('delete');
-            this.storage.clear();
-          }
-        }
-      ]
+  
+      this.randomMeal = newRandomMeal;
+      this.displayMeal = meals[newRandomMeal];
+        
     });
-    alert.present();
   }
 
   presentModal() {
     const modal = this.modalCtrl.create(DialogComponent);
+    modal.onDidDismiss(() => {
+      this.storage.get('myMeals').then((meals) => {
+        if (meals) {
+          this.displayMeal = ``;
+        }
+    });
+    });
     modal.present();
   }
 

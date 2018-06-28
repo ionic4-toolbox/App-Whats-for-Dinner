@@ -6,19 +6,33 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="background">
+    <h2>Add meal</h2>
     <ion-item>
-        <ion-input type="text" name="meal" placeholder="Save a new meal" [(ngModel)]="meal"></ion-input>
+        <ion-input type="text" name="meal" placeholder="e.g. pizza" [(ngModel)]="meal"></ion-input>
     </ion-item>
     <button ion-button (click)="saveMeal(meal)">
         Add meal
     </button>
+    <h3>Your meals</h3>
+    <ul>
+        <li *ngFor="let item of items">
+            {{item}}
+        </li>
+    </ul>
 </ion-content>
 
+
+
 <ion-footer>
-    <ion-toolbar>
-        <button ion-button (click)="dismiss()">
+    <ion-toolbar padding>
+        <button left bottom ion-button (click)="dismiss()">
             Done
         </button>
+        <ion-fab right bottom>
+            <button ion-fab mini (click)="confirmDelete()">
+                <ion-icon name="trash"></ion-icon>
+            </button>
+        </ion-fab>
     </ion-toolbar>
 </ion-footer>
