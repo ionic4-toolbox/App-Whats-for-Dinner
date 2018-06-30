@@ -32,4 +32,10 @@
     .toolbar-title-ios {
         color: $white;
     }
+    ion-fab.pos-relative {
+        position: relative;
+        .delete-button {
+            float: right;
+        }
+    }
 }

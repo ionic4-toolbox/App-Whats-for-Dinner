@@ -21,7 +21,7 @@ export class HomePage {
   ngOnInit(){
     this.storage.get('myMeals').then((meals) => {
         if (! meals) {
-          this.displayMeal = `You have no meals, you can add them by hitting the plus button.`
+          this.displayMeal = `You have not added any meals, you can add them by hitting the plus button.`
         }
     });
   }
@@ -29,6 +29,11 @@ export class HomePage {
   getMeal() {
     this.storage.get('myMeals').then((meals) => {
       if (! meals) {
+        return;
+      }
+
+      if (meals.length === 1) {
+        this.displayMeal = `You have added only one meal: ${meals}`;
         return;
       }
 
@@ -49,8 +54,10 @@ export class HomePage {
       this.storage.get('myMeals').then((meals) => {
         if (meals) {
           this.displayMeal = ``;
+        } else if (! meals) {
+          this.displayMeal = `You have not added any meals, you can add them by hitting the plus button.`;
         }
-    });
+      });
     });
     modal.present();
   }

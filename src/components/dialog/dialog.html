@@ -26,11 +26,11 @@
 
 <ion-footer>
     <ion-toolbar padding>
-        <button left bottom ion-button (click)="dismiss()">
+        <button ion-button (click)="dismiss()">
             Done
         </button>
-        <ion-fab right bottom>
-            <button ion-fab mini (click)="confirmDelete()">
+        <ion-fab class="pos-relative">
+            <button ion-fab mini (click)="confirmDelete()" class="delete-button">
                 <ion-icon name="trash"></ion-icon>
             </button>
         </ion-fab>
