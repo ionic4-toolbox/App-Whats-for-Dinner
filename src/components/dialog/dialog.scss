@@ -24,6 +24,9 @@
     ul {
         list-style: none;
         padding: 0;
+        li {
+            font-size: 1.2em;
+        }
     }
     .toolbar-background-ios {
         background: $purple;
@@ -38,4 +41,8 @@
             float: right;
         }
     }
+}
+
+body.keyboard-open .has-footer{	
+    bottom: 0;
 }
