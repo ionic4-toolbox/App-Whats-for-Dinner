@@ -10,7 +10,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PlannerPage } from '../pages/planner/planner';
 import { MealsPage } from '../pages/meals/meals';
-import { DialogComponent } from '../components/dialog/dialog';
+import { CreditsPage } from '../pages/credits/credits';
 import { TabsComponent } from '../components/tabs/tabs';
 
 @NgModule({
@@ -19,7 +19,7 @@ import { TabsComponent } from '../components/tabs/tabs';
     HomePage,
     PlannerPage,
     MealsPage,
-    DialogComponent,
+    CreditsPage,
     TabsComponent
   ],
   imports: [
@@ -33,7 +33,7 @@ import { TabsComponent } from '../components/tabs/tabs';
     HomePage,
     PlannerPage,
     MealsPage,
-    DialogComponent,
+    CreditsPage,
     TabsComponent
   ],
   providers: [
