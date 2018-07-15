@@ -8,13 +8,19 @@ import { Keyboard } from '@ionic-native/keyboard';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { PlannerPage } from '../pages/planner/planner';
+import { MealsPage } from '../pages/meals/meals';
 import { DialogComponent } from '../components/dialog/dialog';
+import { TabsComponent } from '../components/tabs/tabs';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DialogComponent
+    PlannerPage,
+    MealsPage,
+    DialogComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,10 @@ import { DialogComponent } from '../components/dialog/dialog';
   entryComponents: [
     MyApp,
     HomePage,
-    DialogComponent
+    PlannerPage,
+    MealsPage,
+    DialogComponent,
+    TabsComponent
   ],
   providers: [
     StatusBar,

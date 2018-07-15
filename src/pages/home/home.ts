@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { DialogComponent } from '../../components/dialog/dialog';
 
 @Component({
   selector: 'page-home',
@@ -46,20 +45,6 @@ export class HomePage {
       this.displayMeal = meals[newRandomMeal];
         
     });
-  }
-
-  presentModal() {
-    const modal = this.modalCtrl.create(DialogComponent);
-    modal.onDidDismiss(() => {
-      this.storage.get('myMeals').then((meals) => {
-        if (meals) {
-          this.displayMeal = ``;
-        } else if (! meals) {
-          this.displayMeal = `You have not added any meals, you can add them by hitting the plus button.`;
-        }
-      });
-    });
-    modal.present();
   }
 
 }
