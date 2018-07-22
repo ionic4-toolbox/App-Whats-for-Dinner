@@ -16,8 +16,9 @@ export class MealPage {
               public navParams: NavParams,
               private alertCtrl: AlertController,
               private storage: Storage) {
-
+                
     this.meal = navParams.data.meal.name;
+    
   }
 
   ionViewWillEnter() {
@@ -67,11 +68,11 @@ export class MealPage {
         (item => item.name === this.meal)
       );
       if (array[index].hasOwnProperty('ingredients')) {
-        array[index].ingredients.push(ingredient);
+        array[index].ingredients.push({name:ingredient});
         this.storage.set('myMeals', array);
         this.ingredients = array[index].ingredients;
       } else {
-        array[index].ingredients = [ingredient];
+        array[index].ingredients = [{name:ingredient}];
         this.storage.set('myMeals', array);
         this.ingredients = array[index].ingredients;
       }

@@ -3,6 +3,7 @@ import { NavController, ModalController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { CreditsPage } from '../credits/credits';
+import { MealPage } from '../meal/meal';
 
 @Component({
   selector: 'page-home',
@@ -50,9 +51,22 @@ export class HomePage {
           }
   
       this.randomMeal = newRandomMeal;
-      this.displayMeal = meals[newRandomMeal];
-        
+      this.displayMeal = meals[newRandomMeal].name;
     });
+  }
+
+  selectMeal(displayMeal) {
+    
+    this.storage.get('myMeals').then((data) => {
+      let array = data;
+      let index = array.findIndex(
+        (item => item.name === displayMeal)
+      );
+      this.navCtrl.push(MealPage, {
+        meal: array[index]
+      });
+    });
+
   }
 
 }

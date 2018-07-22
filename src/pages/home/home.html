@@ -6,6 +6,6 @@
 	<div class="container">
 		<h1 class="dinner">What's for dinner?</h1>
 		<button (click)="getMeal()" class="feed-button">Feed me!</button>
-		<p>{{ displayMeal }}</p>
+		<p (click)="selectMeal(displayMeal)">{{ displayMeal }}</p>
 	</div>
 </ion-content>
