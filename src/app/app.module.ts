@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PlannerPage } from '../pages/planner/planner';
 import { MealsPage } from '../pages/meals/meals';
+import { MealPage } from '../pages/meal/meal';
 import { CreditsPage } from '../pages/credits/credits';
 import { TabsComponent } from '../components/tabs/tabs';
 
@@ -19,13 +20,14 @@ import { TabsComponent } from '../components/tabs/tabs';
     HomePage,
     PlannerPage,
     MealsPage,
+    MealPage,
     CreditsPage,
     TabsComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,6 +35,7 @@ import { TabsComponent } from '../components/tabs/tabs';
     HomePage,
     PlannerPage,
     MealsPage,
+    MealPage,
     CreditsPage,
     TabsComponent
   ],

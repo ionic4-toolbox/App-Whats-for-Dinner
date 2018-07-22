@@ -16,8 +16,8 @@
     </button>
     <h3>Your meals</h3>
     <ul>
-        <li *ngFor="let item of items">
-            {{item}}
+        <li *ngFor="let meal of items" (click)="selectMeal(meal)">
+            {{meal.name}}
         </li>
     </ul>
 </ion-content>

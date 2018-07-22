@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ meal }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+  <h2>Add ingredients</h2>
+  <ion-item>
+      <ion-input type="text" name="ingredient" placeholder="Add your favorite ingredients" [(ngModel)]="ingredient"></ion-input>
+  </ion-item>
+  <button ion-button (click)="addIngredient(ingredient)">
+      Add ingredient
+  </button>
+  <h3>Your ingredients</h3>
+  <ul>
+      <li *ngFor="let ingredient of ingredients">
+          {{ingredient}}
+      </li>
+  </ul>
+</ion-content>
+
+<ion-footer>
+    
+    <ion-fab class="pos-relative">
+        <button ion-fab mini (click)="confirmDelete()" class="delete-button">
+            <ion-icon name="trash"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-footer>

@@ -23,10 +23,12 @@ export class HomePage {
     this.navCtrl.push(CreditsPage);
   }
 
-  ngOnInit(){
+  ionViewWillEnter(){
     this.storage.get('myMeals').then((meals) => {
         if (! meals) {
           this.displayMeal = `You have not added any meals, you can add them by hitting the plus button.`
+        } else {
+          this.displayMeal = '';
         }
     });
   }
