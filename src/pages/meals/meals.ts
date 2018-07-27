@@ -58,7 +58,7 @@ export class MealsPage {
             text: 'Delete',
             role: 'delete',
             handler: () => {
-            this.storage.clear();
+            this.storage.remove('myMeals');
             this.items = null;
             }
         }
