@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="nl.joseewouters.dinner" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="nl.joseewouters.dinner" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>What dinner</name>
     <description>Can't decide what to have for dinner tonight?</description>
     <author email="info@joseewouters.nl" href="https://joseewouters.nl">Josee Wouters</author>
@@ -87,5 +87,9 @@
     <allow-navigation href="http://192.168.2.13:8100" />
     <allow-navigation href="http://192.168.2.120:8100" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
+    <allow-navigation href="http://192.168.2.92:8100" />
+    <allow-navigation href="http://192.168.44.53:8100" />
+    <allow-navigation href="http://169.254.252.38:8100" />
+    <allow-navigation href="http://192.168.2.39:8100" />
     <engine name="ios" spec="4.5.4" />
 </widget>

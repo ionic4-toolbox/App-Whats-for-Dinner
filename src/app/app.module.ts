@@ -9,6 +9,7 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PlannerPage } from '../pages/planner/planner';
+import { PlannerSelectPage } from '../pages/planner-select/planner-select';
 import { MealsPage } from '../pages/meals/meals';
 import { MealPage } from '../pages/meal/meal';
 import { CreditsPage } from '../pages/credits/credits';
@@ -19,6 +20,7 @@ import { TabsComponent } from '../components/tabs/tabs';
     MyApp,
     HomePage,
     PlannerPage,
+    PlannerSelectPage,
     MealsPage,
     MealPage,
     CreditsPage,
@@ -34,6 +36,7 @@ import { TabsComponent } from '../components/tabs/tabs';
     MyApp,
     HomePage,
     PlannerPage,
+    PlannerSelectPage,
     MealsPage,
     MealPage,
     CreditsPage,

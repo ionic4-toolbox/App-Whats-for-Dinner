@@ -8,5 +8,12 @@
 
 
 <ion-content padding class="background">
-
-</ion-content>
+  <div *ngFor="let day of days" (click)="setMeal(day)">
+    <h2>
+      {{day.name}}
+    </h2>
+    <p>
+      {{day.meal}}
+    </p>
+  </div>
+</ion-content> 

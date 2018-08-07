@@ -70,7 +70,7 @@ export class MealsPage {
   selectMeal(meal) {
     this.navCtrl.push(MealPage, {
       meal: meal
-    })
+    });
   }
 
 }

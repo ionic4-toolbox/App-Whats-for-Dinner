@@ -21,7 +21,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleLightContent();
       splashScreen.hide();
-      
+
       this.storage.get('versionNumber').then((version) => {
         if (!version) {
           this.storage.get('myMeals').then((data) => {
@@ -32,7 +32,7 @@ export class MyApp {
               this.storage.set('myMeals', newData);
             }
           });
-          let versionNumber = '1.1'
+          let versionNumber = '01.01.00'
           this.storage.set('versionNumber', versionNumber);
         }
       });

@@ -24,9 +24,7 @@ export class MealPage {
   ionViewWillEnter() {
       this.storage.get('myMeals').then((data) => {
         let array = data;
-        let index = array.findIndex(
-          (item => item.name === this.meal)
-        );
+        let index = array.findIndex(item => item.name === this.meal);
         this.ingredients = array[index].ingredients;
       }
     );
@@ -49,7 +47,9 @@ export class MealPage {
           handler: () => {
             this.storage.get('myMeals').then((data) => {
               let array = data;
-              let index = array.indexOf(this.meal);
+              let index = array.findIndex(
+                (item => item.name === this.meal)
+              );
               array.splice(index, 1);
               this.storage.set('myMeals', array);
             });
@@ -64,9 +64,7 @@ export class MealPage {
   addIngredient(ingredient) {
     this.storage.get('myMeals').then((data) => {
       let array = data;
-      let index = array.findIndex(
-        (item => item.name === this.meal)
-      );
+      let index = array.findIndex(item => item.name === this.meal);
       if (array[index].hasOwnProperty('ingredients')) {
         array[index].ingredients.push({name:ingredient});
         this.storage.set('myMeals', array);

@@ -26,7 +26,7 @@ export class HomePage {
 
   ionViewWillEnter(){
     this.storage.get('myMeals').then((meals) => {
-        if (! meals) {
+        if (!meals || meals.length === 0) {
           this.displayMeal = `You have not added any meals, you can add them by hitting the plus button.`
         } else {
           this.displayMeal = '';
@@ -36,12 +36,12 @@ export class HomePage {
 
   getMeal() {
     this.storage.get('myMeals').then((meals) => {
-      if (! meals) {
+      if (!meals || meals.length === 0) {
         return;
       }
 
       if (meals.length === 1) {
-        this.displayMeal = `You have added only one meal: ${meals}`;
+        this.displayMeal = `You have added only one meal: ${meals[0].name}`;
         return;
       }
 
